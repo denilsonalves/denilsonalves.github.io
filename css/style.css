@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --primery-color: #2a2a2e;
-  --secundary-color: #38383d;
-  --title-color: #df3b71;
-  --letter-color: #cfcfd1;
+  --primery-color: #191919;
+  --secundary-color: #282923;
+  --title-color: #ff7454;
+  --letter-color: #b7b7b7;
 }
 
 *,
@@ -26,7 +26,7 @@ body {
   font-family: 'Ubuntu', 'Roboto', sans-serif;
   font-size: 1.4rem;
   color: var(--letter-color);
-  background-color: #1f1f1f;
+  background-color: #333333;
 }
 
 .subtitulo i {
@@ -63,11 +63,11 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background-color: var(--secundary-color);
+  height: 80px;
+  background-color: var(--primery-color);
   border-bottom: 1px solid #333;
-  opacity: 0.94;
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+  /* opacity: 0.94; */
+  box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.4);
 }
 
 .links {
@@ -94,7 +94,7 @@ header {
 .links a {
   position: relative;
   color: var(--title-color);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -124,11 +124,16 @@ header {
   transition: width 0.4s cubic-bezier(0.42, 0.87, 0.4, -0.01);
 }
 
+main {
+  padding-top: 90px;
+  /* margin-bottom: 90px; */
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  /* padding-top: 3rem !important; */
+  /* padding-bottom: 3rem !important; */
   max-width: 115rem;
   align-items: center;
 }
@@ -138,9 +143,20 @@ section {
   box-sizing: border-box;
   padding-left: 20px;
   padding-right: 20px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   align-items: center;
-  padding-top: 90px;
+  padding-top: 110px;
+  padding-bottom: 100px;
+}
+
+#sobre .card {
+  display: flex;
+  flex-direction: row;
+  /* padding-top: 110px; */
+}
+
+.background-color-secundary {
+  background-color: var(--primery-color);
 }
 
 .card {
@@ -153,20 +169,22 @@ section {
 }
 
 .image {
-  max-width: 300px;
+  max-width: 250px;
+  min-width: 200px;
   margin: 0 auto;
+  margin-right: 50px;
 }
 
 .card img {
   border-radius: 8px;
   width: 100%;
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.4);
   border-collapse: collapse;
 }
 
 .card h1 {
   color: var(--title-color);
-  font-size: 6rem;
+  font-size: 5rem;
   margin-top: 20px;
 }
 
@@ -287,7 +305,7 @@ ul {
 
 .lista {
   list-style: none;
-  margin-left: 2.5rem;
+  /* margin-left: 2.5rem; */
   padding-left: 0;
   margin-bottom: 0 !important;
   font-weight: normal;
@@ -313,9 +331,20 @@ hr {
   padding-top: 90px;
 } */
 
+/* Efeito nos itens */
+.js-scroll {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: 0.4s;
+}
+.js-scroll.active-effect {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 @media (max-width: 900px) {
   header {
-    height: 80px;
+    height: 100px;
   }
 
   .links {
@@ -333,8 +362,19 @@ hr {
     padding: 5px;
   }
 
-  section {
+  main {
     padding-top: 110px;
+  }
+
+  #sobre .card {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+  }
+  section {
+    padding-top: 130px;
   }
 
   .card .item {
@@ -346,6 +386,7 @@ hr {
   }
 
   .image {
-    max-width: 300px;
+    margin: auto;
+    max-width: 200px;
   }
 }

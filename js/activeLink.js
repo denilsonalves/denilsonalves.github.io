@@ -5,5 +5,6 @@ function linkAtivo(tag) {
   for (let i = 0; i < linkItem.length; i++) {
     linkItem[i].classList.remove('active');
   }
+
   tag.classList.add('active');
 }
